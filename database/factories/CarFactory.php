@@ -13,10 +13,10 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(App\Car::class, function (Faker $faker) {
+$factory->define(App\car::class, function (Faker $faker) {
     return [
-        'Make' => $faker->randomElements($array= array('Ford','Honda','Toyota'),1,true),
-        'Model' => $faker->randomElements($array= array('Taurus','Mustang','Escape','Camry','Yaris','Prius','Accord','Corolla','Civic','Pilot'),1,true),
+        'Make' => $faker->randomElement($array= array('Ford','Honda','Toyota')),
+        'Model' => $faker->randomElement($array= array('Taurus','Mustang','Escape','Camry','Yaris','Prius','Accord','Corolla','Civic','Pilot')),
         'Year' => $faker->year,
     ];
 });
