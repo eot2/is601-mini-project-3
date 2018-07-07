@@ -28,4 +28,9 @@ class UnitTest extends TestCase
     {
         $this->assertCount(1,['Toyota']);
     }
+    public function testCarMake()
+    {
+        $this->assertContains('Ford',['Ford','Honda','Toyota']);
+    }
+
 }
