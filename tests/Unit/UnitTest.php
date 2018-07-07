@@ -19,4 +19,9 @@ class UnitTest extends TestCase
     {
         $this->assertInternalType('string', 'Yaris');
     }
+
+    public function testYearType()
+    {
+        $this->assertInternalType('int', 2002);
+    }
 }
