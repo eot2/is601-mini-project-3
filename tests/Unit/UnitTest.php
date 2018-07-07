@@ -24,4 +24,8 @@ class UnitTest extends TestCase
     {
         $this->assertInternalType('int', 2002);
     }
+    public function testCount()
+    {
+        $this->assertCount(1,['Toyota']);
+    }
 }
