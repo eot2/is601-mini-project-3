@@ -5,6 +5,7 @@ namespace Tests\Unit;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use App\Car;
 use App\User;
 
 class UnitTest extends TestCase
@@ -14,9 +15,8 @@ class UnitTest extends TestCase
      *
      * @return void
      */
-    public function testExample()
+    public function testModelType()
     {
-
-        $this->assertTrue(true);
+        $this->assertInternalType('string', 'Yaris');
     }
 }
