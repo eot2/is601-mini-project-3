@@ -24,13 +24,17 @@ class UnitTest extends TestCase
     {
         $this->assertInternalType('int', 2002);
     }
-    public function testCount()
+    public function testCarCount()
     {
         $this->assertCount(1,['Toyota']);
     }
     public function testCarMake()
     {
         $this->assertContains('Ford',['Ford','Honda','Toyota']);
+    }
+    public function testUserCount()
+    {
+        $this->assertCount(1,['Samuel']);
     }
 
 }
