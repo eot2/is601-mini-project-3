@@ -41,6 +41,15 @@ class UnitTest extends TestCase
         $car->Year = 2005;
         $this->assertTrue($car->save());
     }
+    public function testUserInsert()
+    {
+        $user= new user();
+        $user->name = 'Lionel Richie';
+        $user->email = 'lrichie@gmail.com';
+        $user->password = 'lrichierich2004';
+        $this->assertTrue($user->save());
+    }
+
 
 
 
