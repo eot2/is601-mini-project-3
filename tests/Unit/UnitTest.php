@@ -49,7 +49,7 @@ class UnitTest extends TestCase
         $car->Year = 2009;
         $car->save();
 
-        $this->assertTrue($car->delete());
+        $this->assertTrue($car->delete())
     }
     public function testUserDelete()
     {
