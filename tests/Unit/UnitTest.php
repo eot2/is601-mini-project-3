@@ -5,6 +5,7 @@ namespace Tests\Unit;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use PHPUnit\Dbunit\TestCaseTrait;
 use App\Car;
 use App\User;
 
@@ -32,9 +33,15 @@ class UnitTest extends TestCase
     {
         $this->assertContains('Ford',['Ford','Honda','Toyota']);
     }
-    public function testUserCount()
+    public function testCarInsert()
     {
-        $this->assertCount(1,['Samuel']);
+        $car = new car();
+        $car->Make = 'Toyota';
+        $car->Model = 'Corolla';
+        $car->Year = 2005;
+        $this->assertTrue($car->save());
     }
+
+
 
 }
