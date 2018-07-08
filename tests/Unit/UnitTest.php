@@ -5,7 +5,7 @@ namespace Tests\Unit;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use PHPUnit\Dbunit\TestCaseTrait;
+use PHPUnit\Framework\Constraint\IsType;
 use App\Car;
 use App\User;
 
@@ -49,7 +49,7 @@ class UnitTest extends TestCase
         $car->Year = 2009;
         $car->save();
 
-        $this->assertTrue($car->delete())
+        $this->assertTrue($car->delete());
     }
     public function testUserDelete()
     {
@@ -70,4 +70,12 @@ class UnitTest extends TestCase
 
         $this->assertTrue($user->save());
     }
+    public function testUserCount()
+    {
+        $users= User::All();
+        $recordcount = $users->count();
+
+        $this->assertInternalType(IsType::TYPE_INT,$recordcount);
+    }
+
 }
