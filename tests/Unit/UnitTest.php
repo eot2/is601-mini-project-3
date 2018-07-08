@@ -41,16 +41,33 @@ class UnitTest extends TestCase
         $car->Year = 2005;
         $this->assertTrue($car->save());
     }
+    public function testCarDelete()
+    {
+        $car = new car();
+        $car->Make = 'Ford';
+        $car->Model = 'Taurus';
+        $car->Year = 2009;
+        $car->save();
+
+        $this->assertTrue($car->delete());
+    }
+    public function testUserDelete()
+    {
+        $user= new user();
+        $user->name = 'George Washington';
+        $user->email = 'gwashington@yahoo.com';
+        $user->password = '$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm';
+        $user->save();
+
+        $this->assertTrue($user->delete());
+    }
     public function testUserInsert()
     {
         $user= new user();
-        $user->name = 'Lionel Richie';
-        $user->email = 'lrichie@gmail.com';
-        $user->password = 'lrichierich2004';
+        $user->name = 'Guy Richie';
+        $user->email = 'grichie@gmail.com';
+        $user->password = '$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm';
+
         $this->assertTrue($user->save());
     }
-
-
-
-
 }
