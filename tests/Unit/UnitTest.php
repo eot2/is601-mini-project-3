@@ -26,6 +26,11 @@ class UnitTest extends TestCase
         $car = Car::find(2);
         $this->assertInternalType('string',$car->Year);
     }
+    public function testCarMake()
+    {
+        $car = Car::find(1);
+        $this->assertSame('Toyota',$car->Make);
+    }
     public function testUpdateCarYear()
     {
         $car = Car::find(2);
