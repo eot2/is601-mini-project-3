@@ -36,7 +36,7 @@ class UnitTest extends TestCase
     {
         $user = User::find(3);
         $user->Name = 'Steve Smith';
-        $this->assertTrue($user->save())
+        $this->assertTrue($user->save());
     }
     public function testCarDelete()
     {
