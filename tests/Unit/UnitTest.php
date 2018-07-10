@@ -24,7 +24,7 @@ class UnitTest extends TestCase
     public function testCarYearType()
     {
         $car = Car::find(2);
-        $this->assertInternalType('string', $car->Year);
+        $this->assertInternalType('int', (int)$car->Year);
     }
     public function testCarMake()
     {
